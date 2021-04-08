@@ -4,6 +4,12 @@ import java.math.BigInteger;
 
 public class IPv6Transformer {
 
+	public static BigInteger IP2BINative(String net) throws UnknownHostException {
+		InetAddress ia = InetAddress.getByName(net);
+		byte[] bytes = ia.getAddress();
+		return new BigInteger(bytes);
+	}
+	
 	public static BigInteger IP2BI(String net) {
 		if (net == null) {
 			return null;
